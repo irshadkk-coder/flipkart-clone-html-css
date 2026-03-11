@@ -1,4 +1,4 @@
-# flipkart-clone-html-css
+
 # Flipkart Homepage Clone
 
 This project is a **Flipkart homepage clone** built using **HTML and CSS**.
