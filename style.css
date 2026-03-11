@@ -1,10 +1,12 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body{
     padding-top: 70px;
     background-color:#F1F2F4;
+    overflow-x: hidden;
 }
 .container{
     display: flex;
@@ -21,35 +23,31 @@ body{
    position:fixed;
    top: 0;
     width: 100%;
-    
     display: flex;
+    flex-wrap: wrap;
     background-color:white;
-    padding: 10px;
+    padding: 10px 16px;
     justify-content: center;
     align-items: center;
     z-index: 1;
-    
-    
-
-
-
 }
 .logo{
-    width: 13%;
+    width: 160px;
+    flex: 0 0 auto;
 }
 .search-bar{
-   
+    min-width: 220px;
     height: 38px;
     padding: 0 10px;
     position: relative;
     border-radius: 8px;
     background-color:rgb(240,245,255);
-    width: 50%;
+    width: min(50%, 720px);
+    flex: 1 1 420px;
     margin: 0 20px;
     display: flex;
     align-items: center;
     justify-content: right;
-    
 }
 .search-bar input{
     background-color: rgb(240,245,255);
@@ -73,14 +71,14 @@ body{
     justify-content: center;
     border-radius: 10px;
     background-color: white;
-    
-
 }
 .nav-link{
     display: flex;
+    align-items: center;
     text-decoration: none;
     gap: 8px;
     color: black;
+    white-space: nowrap;
 }
 .menu-button{
     font-size: 30px;
@@ -88,13 +86,14 @@ body{
 
 }
 .nav-barleft{
-    width: 38%;
+    width: auto;
+    flex: 1 1 320px;
+    flex-wrap: wrap;
     display: flex;
     gap: 10px;
     font-size: 20px;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     align-items: center;
-
 }
 .recent-search{
     display: none;
@@ -236,18 +235,16 @@ body{
  }
  .content-top{
     margin: 20px auto;
-
     margin-top: 10px;
-    
-    height: 18vh;
+    min-height: 140px;
     position: relative;
-    
     display: flex;
+    flex-wrap: wrap;
     justify-content:center;
     align-items: center;
-    gap: 60px;
+    gap: 28px;
     background-color:white;
-
+    padding: 20px;
  }
  .top-products-dropdown,
  .top-products{
@@ -319,22 +316,21 @@ body{
  
  .content-center img{
    width: 100%;
-
-  
-
-
+   display: block;
+   border-radius: 4px;
  }
  .electronics-container{
     margin-top: 15px;
-    /* margin-left: 30px; */
     width:100%;
-    height:40vh;
-    background-color: white;}
+    min-height: 340px;
+    background-color: white;
+}
  .elect-products-container{
-
-    margin-left: 40px;
-    display: flex;
-    gap: 70px;}
+    padding: 0 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 24px;
+}
    
 .produts-one-heading{
     padding: 20px;
@@ -350,39 +346,43 @@ body{
    display: flex;        
    flex-direction: column;
    align-items: center;
+   text-align: center;
  }
  .flight-booking-ad{
     height: 340px;
-   
+    max-width: 260px;
+    width: 100%;
+    object-fit: cover;
     margin-top: 5px;
-
  }
  .elec-main-container{
     display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
     gap: 20px;
  }
  .bft-container{
     padding: 2px;
      margin-top: 12px;
-    height:40vh;
+    min-height: 340px;
     background-color: white;
-    
-
  }
  .produts-two-heading{
     padding: 20px;
     margin-bottom: 10px;
  }
  .bft-products-container{
-    padding: 2px;
-    margin-left: 40px;
-    display: flex;
-    gap: 90px;}
+    padding: 0 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 24px;
+}
 
  .bft-products{
     display: flex;        
    flex-direction: column;
    align-items: center;
+   text-align: center;
  }
  
  .bft-products img{
@@ -392,10 +392,8 @@ body{
  }
  .sports-health-container{
      margin-top: 15px;
-    height:40vh;
+    min-height: 340px;
     background-color: white;
-
-
  }
  .produts-three-heading{
      padding: 20px;
@@ -403,16 +401,16 @@ body{
  }
 
  .sh-products-container{
-    display:flex;
-    margin-left: 40px;
-    gap: 70px;
-
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    padding: 0 20px 20px;
+    gap: 24px;
  }
  .sh-products{
      display: flex;        
    flex-direction: column;
    align-items: center;
-    
+   text-align: center;
  }
  .sh-products img{
      height: 150px;
@@ -428,50 +426,50 @@ body{
     margin-top: 15px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
     gap: 15px;
  }
  .projectors-container{
     display: flex;
     flex-direction: column;
-    flex: 1;
+    flex: 1 1 320px;
     background-color:white;
-    gap: 30px;
+    gap: 16px;
     padding: 20px;
- }
+  }
   .Summer-beauty-container,
  .home-decor-container,
  .summer-fasion-container,
  .top-picks-container{
     display: flex;
     flex-direction: column;
-    flex: 1;
+    flex: 1 1 320px;
     background-color: white;
-    gap: 30px;
+    gap: 16px;
     padding: 20px;
- }
+  }
  .hot-deals-container{
     display: flex;
     flex-direction: column;
-    flex: 1;
+    flex: 1 1 320px;
     background-color:white;
-    gap: 30px;
+    gap: 16px;
     padding: 20px;
- }
+  }
  .projectors-product-container{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
-    flex-wrap: wrap;
- }
+  }
  .product-card{
     padding: 20px;
     display: flex;
-    flex: 1;
     flex-direction:column;
     gap: 5px;
     border: 1px solid grey;
-
- }
+    min-width: 0;
+  }
  .product-card h5{
 font-size: 20px;
 font-weight: bold;
@@ -504,16 +502,14 @@ color: green;
  .hot-deals-product-container,
  .top-picks-product-container
  {
-   display: flex;
+   display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
-    flex-wrap: wrap;
-
- }
+  }
  .top-deals-container,.Pick-your-styles-container{
     margin-top: 15px;
-    height:40vh;
+    min-height: 340px;
     background-color: white;
-
  }
  .pick-styles-heading,.top-deals-heading{
    padding: 20px;
@@ -521,15 +517,17 @@ color: green;
 
  }
  .top-deals-products-container,.p-s-deals-products-container{
-    display:flex;
-    margin-left: 40px;
-    gap: 70px;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    padding: 0 20px 20px;
+    gap: 24px;
  }
  .ps-products,.td-products{
    display: flex;        
    flex-direction: column;
    align-items: center;
- }
+    text-align: center;
+  }
  .ps-products img,.td-products img{
     height: 150px;
     width: 160px;
@@ -553,11 +551,16 @@ color: green;
 margin: 5px 0;
 }
 
- .footer-content {
+.footer-content {
   display: flex;
+  flex-wrap: wrap;
   justify-content:space-around;
   gap: 30px;
   margin-bottom: 50px;
+}
+.footer-column{
+  flex: 1 1 180px;
+  min-width: 180px;
 }
 .footer-column a {
   color:white;
@@ -587,11 +590,10 @@ margin: 5px 0;
 }
 .footer-links {
    display: flex;
-   gap:100px;
+   gap:32px;
+   flex-wrap: wrap;
    color: white;
    align-items: center;
-   
-
 }
 .footer-links a img{
    width: 16px;
@@ -600,6 +602,257 @@ margin: 5px 0;
 .footer-column a:hover{
    text-decoration: underline;
 }
+
+@media (max-width: 1024px){
+  body{
+    padding-top: 132px;
+  }
+
+  .page-wrapper{
+    padding: 0 12px 24px;
+  }
+
+  .nav-bar{
+    justify-content: space-between;
+    row-gap: 12px;
+  }
+
+  .logo{
+    width: 140px;
+  }
+
+  .search-bar{
+    order: 3;
+    width: 100%;
+    margin: 0;
+    flex-basis: 100%;
+  }
+
+  .nav-barleft{
+    flex: 0 1 auto;
+    justify-content: flex-end;
+  }
+
+  .content-top{
+    gap: 20px;
+  }
+
+  .dropdown-content{
+    left: 0;
+    right: auto;
+  }
+
+  .elect-products-container,
+  .bft-products-container,
+  .sh-products-container,
+  .top-deals-products-container,
+  .p-s-deals-products-container{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .flight-booking-ad{
+    max-width: none;
+    height: 260px;
+  }
+}
+
+@media (max-width: 768px){
+  body{
+    padding-top: 190px;
+  }
+
+  .nav-bar{
+    padding: 10px 12px;
+  }
+
+  .nav-barleft{
+    width: 100%;
+    justify-content: space-between;
+    font-size: 16px;
+  }
+
+  .login-btn{
+    height: 42px;
+    width: auto;
+    padding: 0 14px;
+    font-size: 16px;
+  }
+
+  .nav-link{
+    font-size: 15px;
+  }
+
+  .content-top{
+    justify-content: flex-start;
+  }
+
+  .top-products,
+  .top-products-dropdown{
+    flex: 1 1 90px;
+    text-align: center;
+  }
+
+  .top-products img,
+  .top-products-dropdown img{
+    max-width: 64px;
+    height: auto;
+  }
+
+  .dropdown-content{
+    position: static;
+    margin-top: 12px;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .column1,
+  .column2{
+    width: 100%;
+    gap: 16px;
+  }
+
+  .electronics-container,
+  .bft-container,
+  .sports-health-container,
+  .top-deals-container,
+  .Pick-your-styles-container{
+    min-height: 0;
+    padding-bottom: 20px;
+  }
+
+  .elect-products-container,
+  .bft-products-container,
+  .sh-products-container,
+  .top-deals-products-container,
+  .p-s-deals-products-container{
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 24px;
+  }
+
+  .elect-products,
+  .bft-products,
+  .sh-products,
+  .ps-products,
+  .td-products{
+    min-width: 0;
+  }
+
+  .product-card{
+    padding: 16px;
+  }
+
+  .product-card p,
+  .product-card h5{
+    font-size: 16px;
+  }
+
+  .product-card img{
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+  }
+
+  .footer{
+    padding: 32px 16px;
+  }
+
+  .footer-content{
+    gap: 20px;
+  }
+
+  .footer-bottom{
+    justify-content: flex-start;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px){
+  body{
+    padding-top: 228px;
+  }
+
+  .page-wrapper{
+    padding: 0 8px 20px;
+  }
+
+  .logo img{
+    width: 132px;
+    height: auto;
+  }
+
+  .search-bar{
+    min-width: 0;
+  }
+
+  .search-bar input{
+    font-size: 14px;
+  }
+
+  .nav-barleft{
+    gap: 8px;
+  }
+
+  .nav-link{
+    font-size: 14px;
+    gap: 6px;
+  }
+
+  .help-button{
+    width: 40px;
+    height: 40px;
+  }
+
+  .content-top{
+    padding: 16px 12px;
+    gap: 16px;
+  }
+
+  .top-products,
+  .top-products-dropdown{
+    flex-basis: 84px;
+  }
+
+  .elect-products img,
+  .bft-products img,
+  .sh-products img,
+  .ps-products img,
+  .td-products img{
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+  }
+
+  .product-card{
+    padding: 14px;
+  }
+
+  .projectors-product-container,
+  .sb-product-container,
+  .hdf-product-container,
+  .sf-product-container,
+  .hot-deals-product-container,
+  .top-picks-product-container{
+    grid-template-columns: 1fr;
+  }
+
+  .hover-login,
+  .help-links-display{
+    width: min(320px, calc(100vw - 24px));
+    left: 0;
+    right: auto;
+  }
+
+  .footer-column{
+    min-width: 100%;
+  }
+}
+
+
+
+
+
 
 
    
